@@ -1,0 +1,6 @@
+﻿  tbitfield.cpp
+  tset.cpp
+  Создание кода...
+C:\Users\User\Downloads\Программирование\Bit\mp2-lab1-set\src\tbitfield.cpp(190,25): warning C4267:  аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\User\Downloads\Программирование\Bit\mp2-lab1-set\src\tset.cpp(29): warning C4717:  TSet::operator TBitField: рекурсия на всех путях выполнения, функция вызовет переполнение стека
+  set.vcxproj -> C:\Users\User\Downloads\Программирование\Bit\mp2-lab1-set\build\lib\Debug\set.lib
