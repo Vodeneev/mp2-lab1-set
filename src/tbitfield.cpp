@@ -6,7 +6,7 @@
 // Битовое поле
 
 #include "tbitfield.h"
-#include <string.h>
+#include <string>
 
 TBitField::TBitField(int len)
 {
@@ -129,7 +129,12 @@ TBitField TBitField::operator|(const TBitField& bf) // операция "или"
 		{
 			res.pMem[i] = pMem[i] | bf.pMem[i];
 		}
+		for (int i = BitLen - bf.BitLen+1; i < BitLen; i++) {
+			res.pMem[i] = pMem[i] | 0;
+		}
 		return res;
+
+		
 	}
 	else {
 		TBitField res(bf.BitLen);
@@ -137,34 +142,36 @@ TBitField TBitField::operator|(const TBitField& bf) // операция "или"
 		{
 			res.pMem[i] = pMem[i] | bf.pMem[i];
 		}
-		return res;
-	}
-
-	}
-
-
-
-TBitField TBitField::operator&(const TBitField &bf) // операция "и"
-{
-	if (bf.BitLen < BitLen) {
-		TBitField res(BitLen);
-		for (int i = 0; i < bf.MemLen; i++)
-		{
-			res.pMem[i] = pMem[i] & bf.pMem[i];
+		for (int i = bf.BitLen - BitLen+1; i < bf.BitLen; i++) {
+			res.pMem[i] = pMem[i] | 0;
 		}
 		return res;
 	}
-	else {
-		TBitField res(bf.BitLen);
-		res.MemLen = MemLen;
-		for (int i = 0; i < MemLen; i++)
-		{
-			res.pMem[i] = pMem[i] & bf.pMem[i];
-		}
-		return res;
-	}
-
 }
+	
+
+
+
+	TBitField TBitField::operator&(const TBitField& bf) // операция "и"
+	{
+		if (bf.BitLen < BitLen) {
+			TBitField res(BitLen);
+			for (int i = 0; i < bf.MemLen; i++)
+			{
+				res.pMem[i] = pMem[i] & bf.pMem[i];
+			}
+			return res;
+		}
+		else {
+			TBitField res(bf.BitLen);
+			for (int i = 0; i < MemLen; i++)
+			{
+				res.pMem[i] = pMem[i] & bf.pMem[i];
+			}
+			return res;
+		}
+	}
+
 
 
 TBitField TBitField::operator~(void) // отрицание

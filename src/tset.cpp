@@ -6,7 +6,7 @@
 // Множество - реализация через битовые поля
 
 #include "tset.h"
-#include <string.h>
+#include <string>
 
 TSet::TSet(int mp) : MaxPower(mp), BitField(mp)
 {
