@@ -147,7 +147,7 @@ TBitField TBitField::operator|(const TBitField& bf) // операция "или"
 		}
 		for (int i = 0; i < bf.MemLen; i++)
 		{
-			res.pMem[i] = pMem[i] | res.pMem[i];
+			res.pMem[i] = bf.pMem[i] | res.pMem[i];
 		}
 
 		return res;
