@@ -1,0 +1,3 @@
+﻿  tbitfield.cpp
+C:\Users\User\Downloads\Программирование\Bit\mp2-lab1-set\src\tbitfield.cpp(201,25): warning C4267:  аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  set.vcxproj -> C:\Users\User\Downloads\Программирование\Bit\mp2-lab1-set\build\lib\Release\set.lib
